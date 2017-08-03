@@ -19,5 +19,8 @@ script:
   - npm run test
   - cypress run --record --key 93b229bc-672c-4d26-b1fd-79928914b828 --env host=https://jgodi.github.io/angular-quickstart-lib
 
+after_script:
+  - npm run coveralls
+
 after_success:
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && npm run nightly-publish

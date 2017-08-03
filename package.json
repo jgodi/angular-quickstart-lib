@@ -27,7 +27,9 @@
     "gh-pages": "gh-pages -d dist-demo",
     "test": "jest",
     "test:watch": "jest --watch",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
+    "nightly-publish": "npm run build && bash nightly-publish"
   },
   "jest": {
     "preset": "jest-preset-angular",
