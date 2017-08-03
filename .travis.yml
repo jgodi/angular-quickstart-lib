@@ -17,3 +17,4 @@ install:
 script:
   - npm run lint
   - npm run test
+  - cypress run --record --env host=https://jgodi.github.io/angular-quickstart-lib
