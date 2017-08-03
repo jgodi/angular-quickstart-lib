@@ -15,7 +15,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "clean": "rimraf out-tsc dist dist-demo",
+    "clean": "rimraf out-tsc dist dist-demo nightly",
     "start": "ng serve",
     "prebuild": "npm run clean",
     "build": "node build.js",
