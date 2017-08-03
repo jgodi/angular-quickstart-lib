@@ -16,7 +16,7 @@ repoDir="nightly"
 echo "Cloning $repoUrl into $repoDir"
 git clone $repoUrl $repoDir
 
-echo "Cleaning nightly repo and moving release files into it"
+echo "Cleaning nightly repo and moving build files into it"
 rm -rf $repoDir/*
 cp -r $buildDir/* $repoDir
 cd $repoDir

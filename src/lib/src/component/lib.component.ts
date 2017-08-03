@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class LibComponent {
   name = 'Angular Library';
+  constructor() {
+    console.log('HI');
+  }
 }

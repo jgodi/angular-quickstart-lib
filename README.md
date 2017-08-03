@@ -8,5 +8,6 @@ Updated from the fork to use:
 * JEST for unit testing
 * Cypress for E2E testing
 * Support one line command to up versions, publish demo to gh-pages and publish
+* Nightly builds to a nightly-repo on every master build
 
 TODO - add more docs here
