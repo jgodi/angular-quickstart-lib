@@ -177,7 +177,7 @@ var RenderType_LibComponent = __WEBPACK_IMPORTED_MODULE_1__angular_core__["N" /*
     data: {} });
 function View_LibComponent_0(_l) {
     return __WEBPACK_IMPORTED_MODULE_1__angular_core__["_3" /* ɵvid */](0, [(_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* ɵeld */](0, null, null, 1, 'h2', [], null, null, null, null, null)), (_l()(),
-            __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['Hello ', ''])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['\n']))], null, function (_ck, _v) {
+            __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['Hello ', '!!'])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['\n']))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.name;
         _ck(_v, 1, 0, currVal_0);
@@ -268,12 +268,16 @@ var environment = {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LibComponent; });
-var LibComponent = (function () {
+/** PURE_IMPORTS_START  PURE_IMPORTS_END */
+var LibComponent = /*@__PURE__*/ (function () {
     function LibComponent() {
         this.name = 'Angular Library';
+        console.log('HI');
     }
+    LibComponent.ctorParameters = function () { return []; };
     return LibComponent;
 }());
+
 
 
 
