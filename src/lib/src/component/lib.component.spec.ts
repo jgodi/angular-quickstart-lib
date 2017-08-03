@@ -13,7 +13,7 @@ describe('LibComponent', function () {
     TestBed.configureTestingModule({
       declarations: [LibComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,10 +24,7 @@ describe('LibComponent', function () {
 
   it('should create component', () => expect(comp).toBeDefined());
 
-  it('should have expected <h2> text', () => {
-    fixture.detectChanges();
-    const h2 = de.nativeElement;
-    expect(h2.innerText).toMatch(/angular/i,
-      '<h2> should say something about "Angular"');
+  it('should set the name', () => {
+    expect(comp.name).toEqual('Angular Library');
   });
 });

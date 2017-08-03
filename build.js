@@ -10,6 +10,7 @@ const uglify = require('rollup-plugin-uglify');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const rimraf = require('rimraf');
 
 const inlineResources = require('./inline-resources');
 
@@ -29,12 +30,16 @@ return Promise.resolve()
     .then(() => console.log('Inlining succeeded.'))
   )
   // Compile to ES2015.
-  .then(() => ngc({ project: `${tempLibFolder}/tsconfig.lib.json` })
+  .then(() => ngc({
+      project: `${tempLibFolder}/tsconfig.lib.json`
+    })
     .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
     .then(() => console.log('ES2015 compilation succeeded.'))
   )
   // Compile to ES5.
-  .then(() => ngc({ project: `${tempLibFolder}/tsconfig.es5.json` })
+  .then(() => ngc({
+      project: `${tempLibFolder}/tsconfig.es5.json`
+    })
     .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
     .then(() => console.log('ES5 compilation succeeded.'))
   )
@@ -71,7 +76,10 @@ return Promise.resolve()
           include: ['node_modules/rxjs/**']
         }),
         sourcemaps(),
-        nodeResolve({ jsnext: true, module: true })
+        nodeResolve({
+          jsnext: true,
+          module: true
+        })
       ]
     };
 
@@ -121,6 +129,11 @@ return Promise.resolve()
     .then(() => _relativeCopy('README.md', rootFolder, distFolder))
     .then(() => console.log('Package files copy succeeded.'))
   )
+  // Clean up
+  .then(() => Promise.resolve()
+    .then(() => console.log('Cleaning up...'))
+    .then(() => _cleanUp(compilationFolder))
+  )
   .catch(e => {
     console.error('\Build failed. See below for errors.\n');
     console.error(e);
@@ -131,7 +144,10 @@ return Promise.resolve()
 // Copy files maintaining relative paths.
 function _relativeCopy(fileGlob, from, to) {
   return new Promise((resolve, reject) => {
-    glob(fileGlob, { cwd: from, nodir: true }, (err, files) => {
+    glob(fileGlob, {
+      cwd: from,
+      nodir: true
+    }, (err, files) => {
       if (err) reject(err);
       files.forEach(file => {
         const origin = path.join(from, file);
@@ -151,4 +167,14 @@ function _recursiveMkDir(dir) {
     _recursiveMkDir(path.dirname(dir));
     fs.mkdirSync(dir);
   }
+}
+
+// Clean up folders
+function _cleanUp(dir) {
+  return new Promise((resolve, reject) => {
+    rimraf(dir, (err) => {
+      if (err) reject(err);
+      resolve();
+    });
+  });
 }
