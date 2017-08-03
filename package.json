@@ -1,6 +1,6 @@
 {
   "name": "quickstart-lib",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Library QuickStart package.json from the documentation, supplemented with testing support",
   "main": "./bundles/quickstart-lib.umd.js",
   "module": "./quickstart-lib.es5.js",
@@ -22,7 +22,7 @@
     "build-demo": "ng build -aot -bo -scd -dop --base-href \"https://jgodi.github.io/angular-quickstart-lib/\"",
     "lint": "tslint ./src/**/*.ts -t verbose --type-check --project tsconfig.json",
     "release": "standard-version",
-    "postrelease": "git push --follow-tags origin master; npm run build; npm run gh-pages",
+    "postrelease": "git push --follow-tags origin master; npm run build; npm run gh-pages; cd dist && npm publish",
     "pregh-pages": "npm run build-demo",
     "gh-pages": "gh-pages -d dist-demo",
     "test": "jest",
