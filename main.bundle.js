@@ -43,13 +43,14 @@ var styles_AppComponent = [__WEBPACK_IMPORTED_MODULE_0__app_component_scss_shim_
 var RenderType_AppComponent = __WEBPACK_IMPORTED_MODULE_1__angular_core__["N" /* ɵcrt */]({ encapsulation: 0, styles: styles_AppComponent,
     data: {} });
 function View_AppComponent_0(_l) {
-    return __WEBPACK_IMPORTED_MODULE_1__angular_core__["_3" /* ɵvid */](0, [(_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* ɵeld */](0, null, null, 1, 'my-lib', [], null, null, null, __WEBPACK_IMPORTED_MODULE_2__lib_src_component_lib_component_ngfactory__["b" /* View_LibComponent_0 */], __WEBPACK_IMPORTED_MODULE_2__lib_src_component_lib_component_ngfactory__["a" /* RenderType_LibComponent */])),
+    return __WEBPACK_IMPORTED_MODULE_1__angular_core__["_3" /* ɵvid */](0, [(_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* ɵeld */](0, null, null, 1, 'h1', [], null, null, null, null, null)), (_l()(),
+            __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['Quickstart Library'])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['\n'])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* ɵeld */](0, null, null, 1, 'my-lib', [], null, null, null, __WEBPACK_IMPORTED_MODULE_2__lib_src_component_lib_component_ngfactory__["b" /* View_LibComponent_0 */], __WEBPACK_IMPORTED_MODULE_2__lib_src_component_lib_component_ngfactory__["a" /* RenderType_LibComponent */])),
         __WEBPACK_IMPORTED_MODULE_1__angular_core__["O" /* ɵdid */](49152, null, 0, __WEBPACK_IMPORTED_MODULE_3__lib_src_component_lib_component__["a" /* LibComponent */], [], null, null),
         (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['\n'])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* ɵeld */](0, null, null, 1, 'h3', [], null, null, null, null, null)), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['Meaning is: ', ''])), (_l()(),
             __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* ɵted */](null, ['\n']))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.meaning;
-        _ck(_v, 4, 0, currVal_0);
+        _ck(_v, 7, 0, currVal_0);
     });
 }
 function View_AppComponent_Host_0(_l) {
@@ -302,7 +303,7 @@ var LibModule = (function () {
 var LibService = /*@__PURE__*/ (function () {
     function LibService() {
     }
-    LibService.prototype.getMeaning = function () { return 44; };
+    LibService.prototype.getMeaning = function () { return 42; };
     LibService.ctorParameters = function () { return []; };
     return LibService;
 }());
