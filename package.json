@@ -32,6 +32,7 @@
   "jest": {
     "preset": "jest-preset-angular",
     "setupTestFrameworkScriptFile": "<rootDir>/src/jest.ts",
+    "testRegex": "src/lib/.*\\.spec\\.(ts|js)$",
     "collectCoverage": true,
     "coverageReporters": [
       "json",
@@ -39,10 +40,13 @@
       "text",
       "html"
     ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "jest-global-mocks.ts",
-      "jest.ts"
+    "collectCoverageFrom": [
+      "src/lib/**/*.ts",
+      "!src/lib/**/index.ts",
+      "!src/lib/**/module.ts",
+      "!src/lib/**/*.d.ts",
+      "!**/node_modules/**",
+      "!**/vendor/**"
     ]
   },
   "pre-commit": [
