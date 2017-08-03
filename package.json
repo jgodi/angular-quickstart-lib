@@ -40,6 +40,7 @@
       "html"
     ],
     "coveragePathIgnorePatterns": [
+      "/node_modules/",
       "jest-global-mocks.ts",
       "jest.ts"
     ]

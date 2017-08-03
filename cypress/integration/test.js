@@ -5,4 +5,7 @@ context('Querying', function () {
   it('should contain title', function () {
     cy.get('h1').should('contain', 'Quickstart Library');
   })
+  it('should contain meaning', function () {
+    cy.get('h3').should('contain', '42');
+  })
 });
