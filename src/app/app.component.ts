@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibService } from '../lib';
+import { LibService } from '../platform';
 
 @Component({
   selector: 'quickstart-root',

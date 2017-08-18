@@ -27,14 +27,13 @@
     "gh-pages": "gh-pages -d dist-demo",
     "test": "jest",
     "test:watch": "jest --watch",
-    "e2e": "ng e2e",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
     "nightly-publish": "npm run build && bash nightly-publish"
   },
   "jest": {
     "preset": "jest-preset-angular",
     "setupTestFrameworkScriptFile": "<rootDir>/src/jest.ts",
-    "testRegex": "src/lib/.*\\.spec\\.(ts|js)$",
+    "testRegex": "src/platform/.*\\.spec\\.(ts|js)$",
     "collectCoverage": true,
     "coverageReporters": [
       "json",
@@ -43,10 +42,10 @@
       "html"
     ],
     "collectCoverageFrom": [
-      "src/lib/**/*.ts",
-      "!src/lib/**/index.ts",
-      "!src/lib/**/module.ts",
-      "!src/lib/**/*.d.ts",
+      "src/platform/**/*.ts",
+      "!src/platform/**/index.ts",
+      "!src/platform/**/module.ts",
+      "!src/platform/**/*.d.ts",
       "!**/node_modules/**",
       "!**/vendor/**"
     ]
